@@ -3,4 +3,6 @@
 
 int frprint(char* input[], int lines);
 
+char * valid(char * in[]);
+
 #endif

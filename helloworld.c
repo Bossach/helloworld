@@ -21,7 +21,7 @@ int main(int argc, char* argv[]){
 	strcpy(*ptr, buff);
 	
 	for(int a = 1; a < argc; a++){
-		sprintf(buff, "Hello, %s!",argv[a]);
+		sprintf(buff, "Hello, %s!",valid((char **)argv[a]));
 		
 		ptr++;
 		*ptr = (char*)malloc(strlen(buff) + 1);
