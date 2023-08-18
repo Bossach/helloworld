@@ -3,8 +3,6 @@
 #include <string.h>
 #include "helloworld.h"
 
-#define BUFFSIZE 64
-
 int main(int argc, char* argv[]){
 	
 	char *out[argc];
@@ -13,9 +11,9 @@ int main(int argc, char* argv[]){
 	char **ptr;
 	ptr = out;
 		
-	char buff[BUFFSIZE];
+	char buff[MAXW];
 	
-	strcpy(buff, "Hello, world!");
+	strcpy(buff, HEAD "world" TAIL);
 	
 	//allocating memory for out[0]
 	*ptr = (char*)malloc(strlen(buff) + 1);
@@ -25,7 +23,7 @@ int main(int argc, char* argv[]){
 	
 	for(int a = 1; a < argc; a++){
 		//construct desired string
-		sprintf(buff, "Hello, %s!",argv[a]);
+		sprintf(buff, HEAD "%s" TAIL,valid(argv[a]));
 		
 		//shift to next element of out[]
 		ptr++;
