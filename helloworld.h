@@ -9,4 +9,6 @@ int frprint(char* input[], int lines);
 
 char * valid(char * in);
 
+int prepare(char **ptr, int argc, char* argv[]);
+
 #endif

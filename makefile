@@ -17,5 +17,8 @@ framedOut.o: framedOut.c
 validation.o: validation.c
 	$(CMPLR) -c validation.c -o validation.o
 
-$(APP): helloworld.o framedOut.o validation.o
-	$(CMPLR) helloworld.o framedOut.o validation.o -o $(APP)
+prepare.o: prepare.c
+	$(CMPLR) -c prepare.c -o prepare.o
+
+$(APP): helloworld.o framedOut.o validation.o prepare.o
+	$(CMPLR) helloworld.o framedOut.o validation.o prepare.o -o $(APP)
